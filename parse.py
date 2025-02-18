@@ -24,15 +24,10 @@ template = (
     "2. **Format the output properly**, using bullet points or sections when applicable.\n"
     "3. **Use natural human-like phrasing** to make the output readable.\n"
     "4. **If no useful information is found, respond with:** 'No relevant data found.'\n\n"
-    "### Example Output:\n"
-    "**🔥 Hot Sales Found:**\n"
-    "- **Category:** Electronics\n"
-    "  - 🔹 Best Seller: Apple AirPods Pro (50% off)\n"
-    "  - 🔹 Trending: Samsung Galaxy Watch 6 (30% off)\n"
-    "- **Category:** Home & Kitchen\n"
-    "  - 🔹 Discounted: Instant Pot Pressure Cooker (25% off)\n\n"
-    "**If no structured information is found, respond accordingly.**"
-    "**If the user asks for a formal report, provide a detailed summary.**"
+    
+    "5. **If the user asks the assistant to summarize and provide a a table, a chart, etc, provide the type of summaryy requested.**"
+    "6. **If no structured information is found, respond accordingly.**"
+    "7. **If the user asks for a formal report, provide a detailed summary.**"
 )
 
 def parse_with_groq(dom_chunks, parse_description):
@@ -66,7 +61,7 @@ def parse_with_groq(dom_chunks, parse_description):
             # Adjust the temperature to control the level of creativity in the output
             temperature=0.3,
             # Set the maximum number of tokens to generate
-            max_tokens=1024
+            max_tokens=3000,
         )
 
         # Get the parsed text content
